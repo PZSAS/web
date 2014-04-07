@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<content>
+	<PL>
+		<main>
+			<all>
+				<info>Strona w budowie!</info>
+				<graph>
+					<title>Wykres wychylenia klatki piersiowej</title>
+					<desc>Kliknij i przeciągnij obszar wykresu, aby przybliżyć</desc>
+					<desc2>Uszczypnij obszar wykresu, aby przybliżyć</desc2>
+					<xaxis>Czas</xaxis>
+					<yaxis>Wychylenie</yaxis>
+					<series>Poziom wychylenia</series>
+				</graph>
+				<anonymous>
+					<name>Użytkownik:</name>
+					<pass>Hasło:</pass>
+					<login>Zaloguj</login>
+				</anonymous>
+				<login>Zalogowany jako </login>
+				<logout>Wyloguj</logout>
+				<schedule>&lt;br/&gt;Lista&lt;br/&gt;planów</schedule>
+				<activity>&lt;br/&gt;Lista&lt;br/&gt;zajęć</activity>
+				<person>&lt;br/&gt;Lista&lt;br/&gt;osób</person>
+				<place>&lt;br/&gt;Lista&lt;br/&gt;miejsc</place>
+				<desc>Rejestracja</desc>
+				<form>
+					<d1>Login:</d1>
+					<d2>Hasło:</d2>
+					<d3>Zarejestruj</d3>
+				</form>
+			</all>
+		</main>
+	</PL>
+	<EN>
+		<main>
+			<all>
+				<info>Page under construction!</info>
+				<graph>
+					<title>Graph</title>
+					<desc>Click and drag in the plot area to zoom in</desc>
+					<desc2>Pinch the chart to zoom in</desc2>
+					<xaxis></xaxis>
+					<yaxis>Wychylenie</yaxis>
+				</graph>
+				<anonymous>
+					<name>User:</name>
+					<pass>Pass:</pass>
+					<login>Login</login>
+				</anonymous>
+				<login>Logged in ass </login>
+				<logout>Log out</logout>
+				<schedule>&lt;br/&gt;Schedule&lt;br/&gt;list</schedule>
+				<activity>&lt;br/&gt;Activity&lt;br/&gt;list</activity>
+				<person>&lt;br/&gt;Person&lt;br/&gt;list</person>
+				<place>&lt;br/&gt;Place&lt;br/&gt;list</place>
+				<desc>Registration</desc>
+				<form>
+					<d1>Login:</d1>
+					<d2>Pass:</d2>
+					<d3>Register</d3>
+				</form>
+			</all>
+		</main>
+	</EN>
+</content>

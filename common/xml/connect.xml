@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<connect>
+	<server>127.0.0.1</server>
+	<database>pz</database>
+	<user>pz</user>
+	<password>cHpfc2Fz</password>
+</connect>
