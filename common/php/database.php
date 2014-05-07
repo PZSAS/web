@@ -72,8 +72,8 @@
 		
 		$query = 'SELECT l.user_id
 		FROM login l
-		WHERE l.name = "'.$name.'"
-		AND l.password = "'.sha1($pass).'";';
+		WHERE l.login_name = "'.$name.'"
+		AND l.login_password = "'.sha1($pass).'";';
 		
 		query($query);
 		
@@ -91,6 +91,61 @@
        	}
        	else{
           	$message['error'] = 2;
+			echo json_encode($message);
+		}
+	}
+	
+	function getApnea($id,$file){
+		global $result;
+		
+		$query = 'SELECT a.*
+		FROM apnea a
+		WHERE a.user_id = '.$id.'
+		AND a.file_name = "'.$file.'";';
+		
+		query($query);
+		
+       	if($result){
+			while($arrRow = mysql_fetch_assoc($result)) 
+				$schedule[] = $arrRow;
+
+			header('Content-Type: application/json');
+			if($schedule)
+				echo json_encode($schedule);
+			else{
+				$message['error'] = 1;
+				echo json_encode($message);
+			}
+       	}
+       	else{
+          	$message['error'] = 2;
+			echo json_encode($message);
+		}
+	}
+	
+	function sendLogin($name){
+		global $result;
+		
+		$query = 'SELECT *
+			FROM login
+			WHERE login_name = "'.$name.'";';
+		
+		query($query);
+		
+       	if($result){
+			while($arrRow = mysql_fetch_assoc($result)) 
+				$schedule[] = $arrRow;
+
+			header('Content-Type: application/json');
+			if($schedule)
+				echo json_encode($schedule);
+			else{
+				$message['result'] = 1;
+				echo json_encode($message);
+			}
+       	}
+       	else{
+          	$message['result'] = 2;
 			echo json_encode($message);
 		}
 	}
@@ -900,38 +955,11 @@
 		
 		if($fun=="checkUser")
 			checkUser($p1,$p2);
-		else if($fun=="getScheduleInfo")
-			getScheduleInfo($p1);
-		else if($fun=="getSchedule")
-			getSchedule($p1);
-		else if($fun=="getScheduleList")
-			getScheduleList($p1,$p2);
-		else if($fun=="getActivity")
-			getActivity($p1);
-		else if($fun=="getActivityList")
-			getActivityList($p1);
-		else if($fun=="listActivity")
-			listActivity($p1);
-		else if($fun=="getPerson")
-			getPerson($p1);
-		else if($fun=="getPersonList")
-			getPersonList($p1);
-		else if($fun=="listPerson")
-			listPerson($p1);
-		else if($fun=="getPlace")
-			getPlace($p1);
-		else if($fun=="getPlaceList")
-			getPlaceList($p1);
-		else if($fun=="listPlace")
-			listPlace($p1);
-		else if($fun=="getBuilding")
-			getBuilding($p1);
-		else if($fun=="getBuildingRooms")
-			getBuildingRooms($p1,$p2);
-		else if($fun=="getPolygon")
-			getPolygon($p1);
-		else if($fun=="getLogin")
-			getLogin($p1);
+		else if($fun=="sendLogin")
+			sendLogin($p1);
+		else if($fun=="getApnea")
+			getApnea($p1,$p2);
+		
 
 		disconnect();
 	}

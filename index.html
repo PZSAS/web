@@ -7,10 +7,20 @@
 		<script src="common/js/highcharts.js"></script>
 		<script src="common/js/modules/exporting.js"></script>
 		<script src="common/js/script.js"></script>
+		<script src="common/js/analis.js"></script>
+		<script>
+			var signal = [1,2,6,4,8,3,0,9,2,12,8];
+			$('#test').html(entropy(signal,signal.length,2,1,0,5,4));
+		</script>
 	</head>
 	<body>
 
-		<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
-
+		<section id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></section>
+		<input id="login" type="text" />
+		<input id="pass" type="password" />
+		<button id="logon">Zaloguj</button>
+		<select id="files"></select>
+		
+		<section id="test"></section>
 	</body>
 </html>

@@ -1,6 +1,21 @@
 ﻿$(function () {
+	var userId = localStorage.getItem("userId");
+	var fileName = localStorage.getItem("fileName");
+	
 	var lang = language("PL","main","all");
-	var userId = checkUser("admin","newone1");
+	
+	list(lang,userId);
+	
+	$('#logon').click(function(){
+		var uid = checkUser($('#login').val(),$('#pass').val());
+		localStorage.setItem('userId', uid);
+		location.reload(true);
+	});
+	$('#files').change(function(){
+		var sid = this.value;
+		localStorage.setItem('fileName', sid);
+		location.reload(true);
+	});
 	
 	$('#container').highcharts({
 		chart: {
@@ -70,7 +85,7 @@
 			data: loadColor2()[1]
 		}]*/
 		
-		series: load(lang,userId,"2014-01-17")
+		series: load(lang,userId,fileName)
 	});
 	
 	function load(lng,id,name){
@@ -78,7 +93,7 @@
 
 		$.ajax({
 			url: "http://"+window.location.host+"/PZ/common/php/read.php",
-			data: "uid="+id+"&name="+name,
+			data: "function=readFile&uid="+id+"&name="+name,
 			type: "POST",
 			async: false,
 			dataType: "json",
@@ -111,6 +126,32 @@
 		
 		return series;
 	}
+	
+	function list(lng,id){
+		//var sel = $('<select>').attr('name','files');
+		$('#files').append($("<option>").attr('value','-1').text('Wybierz...'));
+		$.ajax({
+			url: "http://"+window.location.host+"/PZ/common/php/read.php",
+			data: "function=listFiles&uid="+id,
+			type: "POST",
+			dataType: "json",
+			success: function(json){
+				$.each(json,function(key,val){
+					$.each(val,function(k,v){
+						if(v.replace(".dat","") === fileName)
+							$('#files').append($("<option>").attr('value',v.replace(".dat","")).attr('selected','selected').text(v.replace(".dat","")));
+						else
+							$('#files').append($("<option>").attr('value',v.replace(".dat","")).text(v.replace(".dat","")));
+					});
+				});
+			},
+			error: function (json) {
+				alert('ERROR: An error occured  in function activityInfo!');
+			}
+		});
+	}
+	
+	
 	
 	function loadColor(){
 		var datas = [];
