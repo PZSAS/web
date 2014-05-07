@@ -15,5 +15,5 @@ web - Chmura + Strona WWW
 	- pics - katalog z obrazami
 	- xml - katalog z plikami XML
 - data/ - katalog z sygna³ami u¿ytkowników
-- - uXXXXXX - katalog z danymi u¿ytkownika o id XXXXXX
+	- uXXXXXX - katalog z danymi u¿ytkownika o id XXXXXX
 - index.html - strona g³ówna
