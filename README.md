@@ -1,19 +1,31 @@
-web - Chmura + Strona WWW
+锘縲eb - Chmura + Strona WWW
 ===
-## U縴te technologie:
+## U偶yte technologie:
 - Baza danych - MySQL
 - Silnik - PHP + JavaScript (Framework jQuery)
 - Widoki - HTML + CSS
 - Przechowywanie statycznych danych - XML
 
-## Struktura katalog體:
+## Struktura plik贸w:
 - common/ - katalog ze wszystkim co potrzebne
-	- css - katalog zawieraj筩y pliki css - arkusze styl體
-	- data - katalog tymczasowy - pomocniczy (nieistotny)
-	- js - katalog ze skryptami JavaScripy (jQuery)
-	- php - katalog ze skryptami PHP
-	- pics - katalog z obrazami
-	- xml - katalog z plikami XML
-- data/ - katalog z sygna砤mi u縴tkownik體
-	- uXXXXXX - katalog z danymi u縴tkownika o id XXXXXX
-- index.html - strona g丑wna
+	- css/ - katalog zawieraj膮cy pliki css - arkusze styl贸w
+	- data/ - katalog tymczasowy - pomocniczy (nieistotny)
+	- js/ - katalog ze skryptami JavaScripy (jQuery)
+		- adapters/, modules/, themes/ - katalogi od biblioteki highcharts
+		- highcharts.js, highcharts.src.js, highcharts-all.js, highcharts-more.js, highcharts-more.src.js - biblioteka highcharts
+		- analis.js - analiza sygna艂
+		- jquery.min.js - framework jQuery
+		- script.js - silnik - obs艂uga zdarze艅 ze strony
+	- php/ - katalog ze skryptami PHP
+		- analiz.php - analiza sygna艂u
+		- content.php - 艂adowanie zawarto艣ci strony - tekst贸w statyczne
+		- database.php - obs艂uga bazy danych
+		- read.php - wczytywanie danych z plik贸w
+		- write.php - zapis danych do plik贸w
+	- pics/ - katalog z obrazami
+	- xml/ - katalog z plikami XML
+		- connect.xml - dane do po艂膮czenia z baz膮 danych
+		- content.xml - dane (teksty) statyczne
+- data/ - katalog z sygna艂ami u偶ytkownik贸w
+	- uXXXXXX/ - katalog z danymi u偶ytkownika o id XXXXXX
+- index.html - strona g艂贸wna
